@@ -1,0 +1,12 @@
+catalog:
+  build: ../microservice-demo/microservice-demo-catalog
+order:
+  build: ../microservice-demo/microservice-demo-order
+varnish:
+  build: varnish
+  links:
+   - order
+   - catalog
+  ports:
+   - "8080:8080"
+
