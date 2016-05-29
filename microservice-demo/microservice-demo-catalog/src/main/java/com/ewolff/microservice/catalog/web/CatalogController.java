@@ -62,12 +62,15 @@ public class CatalogController {
 	}
 
 	@RequestMapping({ "/item-choice.esi" })
-	public ModelAndView ItemChoice(@RequestParam(name = "selected", required = false) Long selected) {
+	public ModelAndView ItemChoice(@RequestParam(name = "selected", required = false) Long selected,
+			@RequestParam("name") String name, @RequestParam("id") String id) {
 		Map model = new HashMap<String, Object>();
 		model.put("items", itemRepository.findAll());
 		if (selected != null) {
 			model.put("selected", selected);
 		}
+		model.put("id", id);
+		model.put("name", name);
 		return new ModelAndView("item-choice", model);
 	}
 

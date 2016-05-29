@@ -27,9 +27,9 @@
 						th:field="*{orderLine[__${orderLineStat.index}__].count}" />
 				</div>
 				<div class="col-xs-2">
-					<select th:field="*{orderLine[__${orderLineStat.index}__].itemId}">
-						<esi:include th:attr="src=|/catalog/item-choice.esi?selected=${orderLine.itemId}|" src="/catalog/item-choice.esi?selected=1" />
-					</select>
+					<esi:include
+						th:src="@{/catalog/item-choice.esi(id='orderLine'+${orderLineStat.index}+'.itemId', name='orderLine['+${orderLineStat.index}+'].itemId', selected=${orderLine.itemId})}" 
+						/>
 				</div>
 			</div>
 			<div class="row">

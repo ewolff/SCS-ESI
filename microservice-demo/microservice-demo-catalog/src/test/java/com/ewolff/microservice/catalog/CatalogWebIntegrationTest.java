@@ -87,21 +87,13 @@ public class CatalogWebIntegrationTest {
 	}
 
 	@Test
-	public void IsChoiceReturned() {
-		String url = catalogURL() + "/item-choice.esi";
-		String body = getForMediaType(String.class, MediaType.TEXT_HTML, url);
-
-		assertThat(body, containsString("iPod nano"));
-		assertThat(body, not(containsString("selected")));
-		assertThat(body, containsString("<option"));
-	}
-
-	@Test
 	public void IsChoiceReturnedAndSelectedWorks() {
-		String url = catalogURL() + "/item-choice.esi?selected=2";
+		String url = catalogURL() + "/item-choice.esi?selected=2&id=myId&name=myName";
 		String body = getForMediaType(String.class, MediaType.TEXT_HTML, url);
 
 		assertThat(body, containsString("iPod nano"));
+		assertThat(body, containsString("id=\"myId\""));
+		assertThat(body, containsString("name=\"myName\""));
 		assertThat(body, containsString("selected"));
 		assertThat(body, containsString("<option"));
 	}
