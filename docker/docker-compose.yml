@@ -1,12 +1,12 @@
-catalog:
+esi-catalog:
   build: ../microservice-demo/microservice-demo-catalog
-order:
+esi-order:
   build: ../microservice-demo/microservice-demo-order
-varnish:
+esi-varnish:
   build: varnish
   links:
-   - order
-   - catalog
+   - esi-order
+   - esi-catalog
   ports:
    - "8080:8080"
 

@@ -7,12 +7,12 @@ vcl 4.0;
 
 # Default backend definition.
 backend default {
-    .host = "order";
+    .host = "esi-order";
     .port = "8080";
 }
 
 backend catalog {
-        .host = "catalog";
+        .host = "esi-catalog";
         .port = "8080";
 }
 
