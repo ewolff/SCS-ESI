@@ -47,3 +47,13 @@ Varnish interprets the ESIs. The `default.vcl` in the directory
 
 The microservices have an Java main application in src/test/java to
 run them stand alone with some test data.
+
+Architecture Disclaimer
+-------------------
+
+This is a technology demo. The coupling between the two components in
+this case is very tight - the integration is providing rather small
+components that are embedded in specific pages. In a real world
+architecture this should not be the case. Please refer to
+http://scs-architecture.org/ to better understand the architecture
+this should support.
