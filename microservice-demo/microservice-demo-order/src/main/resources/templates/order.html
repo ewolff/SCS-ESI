@@ -20,7 +20,7 @@
 
 		<div class="row" th:each="orderLine : ${order.orderLine}">
 			<div class="col-md-2" th:text="${orderLine.count}">2</div>
-			<div class="col-md-2"> <esi:include th:attr="src=|/catalog/${orderLine.itemId}.esi|" src="/catalog/23.esi"/> </div>
+			<div class="col-md-2"> <esi:include th:attr="src=|/catalog/${orderLine.itemId}.esi|" /> </div>
 		</div>
 	</div>
 </body>
