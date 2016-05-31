@@ -30,7 +30,7 @@ The SCS are:
   item in an order.
 - microservice-demo-order does order processing. It outputs
   `esi:include` in its HTML files to include the HTML snippets of
-  microservices-demo-catalog. These are interpreted my the Varnish web
+  microservices-demo-catalog. These are interpreted by the Varnish web
   cache.
 
 Varnish interprets the ESIs. The `default.vcl` in the directory
