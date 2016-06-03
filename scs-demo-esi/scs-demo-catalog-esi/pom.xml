@@ -4,11 +4,11 @@
 
 	<parent>
 		<groupId>com.ewolff</groupId>
-		<artifactId>microservice-demo</artifactId>
+		<artifactId>scs-demo-esi</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>microservice-demo-order</artifactId>
+	<artifactId>scs-demo-catalog-esi</artifactId>
 
 	<dependencies>
 		<dependency>
@@ -19,6 +19,11 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
 		<dependency>
@@ -54,7 +59,7 @@
 			<artifactId>commons-lang</artifactId>
 			<version>2.6</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.webjars</groupId>
 			<artifactId>bootstrap</artifactId>

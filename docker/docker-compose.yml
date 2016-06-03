@@ -1,7 +1,7 @@
 esi-catalog:
-  build: ../microservice-demo/microservice-demo-catalog
+  build: ../scs-demo-esi/scs-demo-catalog-esi
 esi-order:
-  build: ../microservice-demo/microservice-demo-order
+  build: ../scs-demo-esi/scs-demo-order-esi
 esi-varnish:
   build: varnish
   links:
