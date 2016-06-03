@@ -1,12 +1,14 @@
-esi-catalog:
-  build: ../scs-demo-esi/scs-demo-catalog-esi
-esi-order:
-  build: ../scs-demo-esi/scs-demo-order-esi
-esi-varnish:
-  build: varnish
-  links:
-   - esi-order
-   - esi-catalog
-  ports:
-   - "8080:8080"
+version: '2'
+services:
+  catalog:
+    build: ../scs-demo-esi/scs-demo-catalog-esi
+  order:
+    build: ../scs-demo-esi/scs-demo-order-esi
+  varnish:
+    build: varnish
+    links:
+     - order
+     - catalog
+    ports:
+     - "8080:8080"
 
