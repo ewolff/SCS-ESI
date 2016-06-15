@@ -12,8 +12,8 @@ backend default {
 }
 
 backend catalog {
-        .host = "catalog";
-        .port = "8080";
+    .host = "catalog";
+    .port = "8080";
 }
 
 sub vcl_recv {
