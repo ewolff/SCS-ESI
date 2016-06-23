@@ -2,7 +2,7 @@ SCS ESI Sample
 ==============
 
 For [Self-contained Systems](http://scs-architecture.org) multiple
-frontends need to be integrated. This sample shows how to
+frontends need to be integrated. This sample shows how to do
 this. Varnish serves as a cache and also ESI (Edge Side Includes) are
 used to integrate multiple backends into one HTTP site.
 
