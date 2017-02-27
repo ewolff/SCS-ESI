@@ -33,6 +33,5 @@ The result should be:
 - Use `docker-machine ip dev` to find the IP adress of the virtual machine.
 - You can access the order SCS at http://ipadresss:8080/ . It goes
 to the order SCS.
-- You can access the catalog SCS at http://ipadresss:8080/catalog .
 
 - Use `docker-machine rm dev` to destroy the virtual machine.

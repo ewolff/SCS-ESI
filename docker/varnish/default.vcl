@@ -11,17 +11,16 @@ backend default {
     .port = "8080";
 }
 
-backend catalog {
-    .host = "catalog";
-    .port = "8080";
+backend common {
+    .host = "common";
+    .port = "8180";
 }
 
 sub vcl_recv {
     # Happens before we check if we have this in cache already.
-    /* Rewrite all requests to /catalog to go to the catalog SCS */
-    if (req.url ~ "^/catalog") {
-       set req.url = regsub(req.url, "^/catalog", "/");
-       set req.backend_hint = catalog;
+    /* Rewrite all requests to /common to go to the common SCS */
+    if (req.url ~ "^/common") {
+       set req.backend_hint = common;
     }
 }
 

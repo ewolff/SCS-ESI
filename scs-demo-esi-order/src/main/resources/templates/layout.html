@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Layout</title>
+	<esi:include src="/common/header" />
+</head>
+
+<body>
+	<div class="container">
+		<esi:include src="/common/navbar" />
+		<h1 layout:fragment="header">Layout</h1>
+		<div layout:fragment="content">Fake content</div>
+	</div>
+	<esi:include src="/common/footer" />
+</body>
+</html>

@@ -1,14 +1,14 @@
 version: '2'
 services:
-  catalog:
-    build: ../scs-demo-esi/scs-demo-catalog-esi
+  common:
+    build: ../scs-demo-esi-common/
   order:
-    build: ../scs-demo-esi/scs-demo-order-esi
+    build: ../scs-demo-esi-order
   varnish:
     build: varnish
     links:
+     - common
      - order
-     - catalog
     ports:
      - "8080:8080"
 
