@@ -10,5 +10,5 @@ services:
      - common
      - order
     ports:
-     - "8080:8080"
+     - "8090:8080"
 
