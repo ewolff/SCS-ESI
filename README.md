@@ -24,14 +24,17 @@ Remarks on the Code
 -------------------
 
 The SCS are: 
-- microservice-demo-catalog is the application to take care of
-  items. You can access it at `/catalog`. Also it is used by order to
-  display HTML snippets with the choice of items and the text for each
-  item in an order.
-- microservice-demo-order does order processing. It outputs
+- [scs-demo-esi-common](scs-demo-esi-common) provides web assets and common headers
+and footers for services. The microservice is written in Go and therfore has a small
+footprint. It uses Multi Stage Docker containers to compile the Go program in one Docker
+image and then copy over the result into a separate Docker image.
+- [scs-demo-esi-order](scs-demo-esi-order) does order processing. It outputs
   `esi:include` in its HTML files to include the HTML snippets of
-  microservices-demo-catalog. These are interpreted by the Varnish web
-  cache.
+  `scs-demo-esi-common`. These are interpreted by the Varnish web
+  cache. This microservices is written in Java. It has an Java main application
+  in [src/test/java](https://github.com/ewolff/SCS-ESI/tree/master/scs-demo-esi-order/src/test/java/com/ewolff/microservice/order)
+  to run the microservice stand alone with some test data. However, the layout
+  of the web page will be incomplete because the ESI includes are not handled.
 
 Varnish interprets the ESIs. The `default.vcl` in the directory
   `docker/varnish` includes the configuration to enable this. It
@@ -45,8 +48,6 @@ Varnish interprets the ESIs. The `default.vcl` in the directory
   some resilience.
 
 
-The microservices have an Java main application in src/test/java to
-run them stand alone with some test data.
 
 Architecture Disclaimer
 -------------------
