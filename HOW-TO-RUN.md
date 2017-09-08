@@ -127,7 +127,9 @@ and macOS you can find the RAM setting in the Docker application under
 Preferences/ Advanced.
   
 If you need to do more trouble shooting open a shell in the container
-using e.g. `docker exec -it scsesi_catalog_1 /bin/sh` or execute
-command using `docker exec scsesi_catalog_1 /bin/ls`.
+using e.g. `docker exec -it scsesi_order_1 /bin/sh` or execute
+command using `docker exec scsesi_order_1 /bin/ls`. This only works in
+the order and varnish containers. The common container contains just a
+Go binary and no other tools.
 
 You can terminate all containers using `docker-compose down`.
