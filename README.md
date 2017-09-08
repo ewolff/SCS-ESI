@@ -1,6 +1,8 @@
 SCS ESI Sample
 ==============
 
+[Deutsche Anleitung zum Starten des Beispiels](WIE-LAUFEN.md)
+
 For [Self-contained Systems](http://scs-architecture.org) multiple
 frontends need to be integrated. This sample shows how to do
 this. Varnish serves as a cache and also ESI (Edge Side Includes) are
