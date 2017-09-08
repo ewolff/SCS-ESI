@@ -132,4 +132,6 @@ command using `docker exec scsesi_order_1 /bin/ls`. This only works in
 the order and varnish containers. The common container contains just a
 Go binary and no other tools.
 
+The example can be accessed at http://localhost:8090/ .
+
 You can terminate all containers using `docker-compose down`.

@@ -149,5 +149,8 @@ Leider funktioniert das nur in dem Order- und Varnish-Container. Der
 Common-Container enthält nur ein Go Binary und daher keine weiteren
 Werkzeuge.
 
+Das Beispiel steht unter http://localhost:8090/ zur Verfügung.
+
+
 Mit `docker-compose down` kannst Du alle Container beenden.
 
