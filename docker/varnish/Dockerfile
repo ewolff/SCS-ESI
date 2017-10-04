@@ -7,7 +7,7 @@ echo "deb https://repo.varnish-cache.org/ubuntu/ trusty varnish-4.1" \
      >> /etc/apt/sources.list.d/varnish-cache.list
 RUN apt-get update
 RUN apt-get install -y -qq varnish
-ADD default.vcl /etc/varnish/default.vcl
-ADD start /start
+COPY default.vcl /etc/varnish/default.vcl
+COPY start /start
 RUN chmod 0755 /start
 CMD ["/start"]
