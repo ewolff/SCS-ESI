@@ -4,11 +4,13 @@ services:
     build: ../scs-demo-esi-common/
   order:
     build: ../scs-demo-esi-order
+    ports:
+     - "8090:8080"
   varnish:
     build: varnish
     links:
      - common
      - order
     ports:
-     - "8090:8080"
+     - "8080:8080"
 

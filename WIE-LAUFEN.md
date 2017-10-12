@@ -122,8 +122,8 @@ Du kannst nun überprüfen, ob alle Docker Container laufen:
 ```
 [~/SCS-ESI/docker]docker ps
 CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                    NAMES
-1a13f1daddcf        scsesi_varnish      "/start"                 19 seconds ago      Up 18 seconds       0.0.0.0:8090->8080/tcp   scsesi_varnish_1
-c6eb5d68b795        scsesi_order        "/bin/sh -c '/usr/..."   21 seconds ago      Up 19 seconds       8080/tcp                 scsesi_order_1
+1a13f1daddcf        scsesi_varnish      "/start"                 19 seconds ago      Up 18 seconds       0.0.0.0:8080->8080/tcp   scsesi_varnish_1
+c6eb5d68b795        scsesi_order        "/bin/sh -c '/usr/..."   21 seconds ago      Up 19 seconds       0.0.0.0:8090->8080/tcp                 scsesi_order_1
 1fb2aecbe10e        scsesi_common       "/common"                6 weeks ago         Up 20 seconds       8180/tcp                 scsesi_common_1
 ```
 
@@ -149,7 +149,7 @@ Leider funktioniert das nur in dem Order- und Varnish-Container. Der
 Common-Container enthält nur ein Go Binary und daher keine weiteren
 Werkzeuge.
 
-Das Beispiel steht unter http://localhost:8090/ zur Verfügung.
+Das Beispiel steht unter http://localhost:8080/ zur Verfügung.
 
 
 Mit `docker-compose down` kannst Du alle Container beenden.

@@ -109,8 +109,8 @@ Check wether all containers are running:
 ```
 [~/SCS-ESI/docker]docker ps
 CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                    NAMES
-1a13f1daddcf        scsesi_varnish      "/start"                 19 seconds ago      Up 18 seconds       0.0.0.0:8090->8080/tcp   scsesi_varnish_1
-c6eb5d68b795        scsesi_order        "/bin/sh -c '/usr/..."   21 seconds ago      Up 19 seconds       8080/tcp                 scsesi_order_1
+1a13f1daddcf        scsesi_varnish      "/start"                 19 seconds ago      Up 18 seconds       0.0.0.0:8080->8080/tcp   scsesi_varnish_1
+c6eb5d68b795        scsesi_order        "/bin/sh -c '/usr/..."   21 seconds ago      Up 19 seconds       0.0.0.0:8090->8080/tcp0.0.0.0:8090->8080/tcp                 scsesi_order_1
 1fb2aecbe10e        scsesi_common       "/common"                6 weeks ago         Up 20 seconds       8180/tcp                 scsesi_common_1
 ```
 
@@ -132,6 +132,6 @@ command using `docker exec scsesi_order_1 /bin/ls`. This only works in
 the order and varnish containers. The common container contains just a
 Go binary and no other tools.
 
-The example can be accessed at http://localhost:8090/ .
+The example can be accessed at http://localhost:8080/ .
 
 You can terminate all containers using `docker-compose down`.
