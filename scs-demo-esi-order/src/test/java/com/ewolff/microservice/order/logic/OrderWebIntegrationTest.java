@@ -1,22 +1,17 @@
 package com.ewolff.microservice.order.logic;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 import java.net.URI;
-import java.util.stream.StreamSupport;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.test.IntegrationTest;
-import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
@@ -26,9 +21,7 @@ import org.springframework.web.util.UriTemplate;
 import com.ewolff.microservice.order.OrderApp;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = OrderApp.class)
-@WebAppConfiguration
-@IntegrationTest("server.port=0")
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT, classes = OrderApp.class)
 @ActiveProfiles("test")
 public class OrderWebIntegrationTest {
 
@@ -51,7 +44,10 @@ public class OrderWebIntegrationTest {
 			order.addLine(2, 42);
 			orderRepository.save(order);
 			orderList = restTemplate.getForObject(orderURL(), String.class);
-			assertTrue(orderList.contains("href")); // if the order is processed, a link and a form for delete should be rendered
+			assertTrue(orderList.contains("href")); // if the order is
+													// processed, a link and a
+													// form for delete should be
+													// rendered
 			assertTrue(orderList.contains("form"));
 		} finally {
 			orderRepository.deleteAll();
