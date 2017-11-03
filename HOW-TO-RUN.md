@@ -79,6 +79,9 @@ Successfully built f7e4c455f136
 Successfully tagged scsesi_varnish:latest
 ```
 
+If the build fails, you can use  `docker-compose build --no-cache` to
+build them from scratch.
+
 Afterwards the Docker images should have been created. They have the prefix
 `scsesi`:
 

@@ -86,6 +86,9 @@ Successfully built f7e4c455f136
 Successfully tagged scsesi_varnish:latest
 ```
 
+Wenn der Build nicht klappt, dann kann man mit  `docker-compose build
+--no-cache` die Container komplett neu bauen.
+
 Danach sollten die Docker Images erzeugt worden sein. Sie haben das
 Präfix `scsesi`:
 
