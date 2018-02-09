@@ -94,7 +94,7 @@ Successfully tagged scsesi_varnish:latest
 ```
 
 Wenn der Build nicht klappt, dann kann man mit  `docker-compose build
---no-cache` die Container komplett neu bauen.
+--no-cache` die Container komplett neu bauen.
 
 Danach sollten die Docker Images erzeugt worden sein. Sie haben das
 Präfix `scsesi`:
@@ -112,19 +112,10 @@ Option `-d` bedeutet, dass die Container im Hintergrund gestartet
 werden und keine Ausgabe auf der Kommandozeile erzeugen.
 
 ```
-[~/microservice/docker]docker-compose up -d
-Recreating ms_eureka_1 ... 
-Recreating ms_eureka_1 ... done
-Recreating ms_zuul_1 ... 
-Recreating ms_customer_1 ... 
-Recreating ms_zuul_1
-Recreating ms_order_1 ... 
-Recreating ms_customer_1
-Recreating ms_turbine_1 ... 
-Creating ms_catalog_1 ... 
-Recreating ms_order_1
-Recreating ms_turbine_1
-Recreating ms_customer_1 ... done
+[~/SCS-ESI/docker]docker-compose up -d
+Creating scsesi_common_1  ... done
+Creating scsesi_order_1   ... done
+Creating scsesi_varnish_1 ... done
 ```
 
 Du kannst nun überprüfen, ob alle Docker Container laufen:
