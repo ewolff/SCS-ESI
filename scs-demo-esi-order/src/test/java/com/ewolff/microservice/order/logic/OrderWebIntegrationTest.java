@@ -2,8 +2,6 @@ package com.ewolff.microservice.order.logic;
 
 import static org.junit.Assert.*;
 
-import java.net.URI;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +14,6 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
-import org.springframework.web.util.UriTemplate;
 
 import com.ewolff.microservice.order.OrderApp;
 
@@ -73,8 +70,7 @@ public class OrderWebIntegrationTest {
 		map.add("submit", "");
 		map.add("orderLine[0].itemId", "42");
 		map.add("orderLine[0].count", "2");
-		URI uri = restTemplate.postForLocation(orderURL(), map, String.class);
-		UriTemplate uriTemplate = new UriTemplate(orderURL() + "/{id}");
+		restTemplate.postForLocation(orderURL(), map, String.class);
 		assertEquals(before + 1, orderRepository.count());
 	}
 }

@@ -48,7 +48,7 @@ class OrderController {
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	public ModelAndView get(@PathVariable("id") long id) {
-		return new ModelAndView("order", "order", orderRepository.findOne(id));
+		return new ModelAndView("order", "order", orderRepository.findById(id).get());
 	}
 
 	@RequestMapping(value = "/", method = RequestMethod.POST)
@@ -59,7 +59,7 @@ class OrderController {
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
 	public ModelAndView post(@PathVariable("id") long id) {
-		orderRepository.delete(id);
+		orderRepository.deleteById(id);
 
 		return new ModelAndView("success");
 	}
