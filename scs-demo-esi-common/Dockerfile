@@ -1,4 +1,4 @@
-FROM golang:1.8.3-jessie
+FROM golang:1.10.3
 COPY /src/github.com/ewolff/common /go/src/github.com/ewolff/common
 WORKDIR /go/src/github.com/ewolff/common
 RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o common .
