@@ -35,7 +35,7 @@ class OrderController {
 		return new ModelAndView("orderlist", "orders", orderRepository.findAll());
 	}
 
-	@RequestMapping(value = "/form", method = RequestMethod.GET)
+	@RequestMapping(value = "/form.html", method = RequestMethod.GET)
 	public ModelAndView form() {
 		return new ModelAndView("orderForm", "order", new Order());
 	}

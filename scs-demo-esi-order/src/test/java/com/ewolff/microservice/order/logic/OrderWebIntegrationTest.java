@@ -5,8 +5,8 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -24,7 +24,7 @@ public class OrderWebIntegrationTest {
 
 	private RestTemplate restTemplate = new RestTemplate();
 
-	@Value("${local.server.port}")
+	@LocalServerPort
 	private long serverPort;
 
 	@Autowired
@@ -57,7 +57,7 @@ public class OrderWebIntegrationTest {
 
 	@Test
 	public void IsOrderFormDisplayed() {
-		ResponseEntity<String> resultEntity = restTemplate.getForEntity(orderURL() + "/form", String.class);
+		ResponseEntity<String> resultEntity = restTemplate.getForEntity(orderURL() + "/form.html", String.class);
 		assertTrue(resultEntity.getStatusCode().is2xxSuccessful());
 		assertTrue(resultEntity.getBody().contains("<form"));
 	}
