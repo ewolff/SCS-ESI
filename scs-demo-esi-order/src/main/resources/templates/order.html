@@ -21,8 +21,8 @@
 
 		<div class="row" th:each="orderLine : ${order.orderLine}">
 			<div class="col-md-2" th:text="${orderLine.count}">2</div>
-			<div class="col-md-2" th:text="${@itemRepository.findOne(orderLine.itemId).name}">iPod</div>
-			<div class="col-md-2" th:text="${@itemRepository.findOne(orderLine.itemId).price*orderLine.count}">42</div>
+			<div class="col-md-2" th:text="${@itemRepository.findById(orderLine.itemId).get().name}">iPod</div>
+			<div class="col-md-2" th:text="${@itemRepository.findById(orderLine.itemId).get().price*orderLine.count}">42</div>
 		</div>
 	</div>
 </body>
