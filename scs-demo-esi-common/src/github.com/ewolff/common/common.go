@@ -9,9 +9,9 @@ import (
 
 func main() {
 	http.Handle("/common/css/", http.StripPrefix("/common/css/", http.FileServer(http.Dir("/css"))))
-	http.HandleFunc("/common/header", Header)
-	http.HandleFunc("/common/footer", Footer)
-	http.HandleFunc("/common/navbar", Navbar)
+	http.HandleFunc("/common/header-1.0", Header)
+	http.HandleFunc("/common/footer-1.0", Footer)
+	http.HandleFunc("/common/navbar-1.0", Navbar)
 	fmt.Println("Starting up on 8180")
 	log.Fatal(http.ListenAndServe(":8180", nil))
 }
