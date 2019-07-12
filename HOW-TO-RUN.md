@@ -178,7 +178,7 @@ required to install the Docker images: `minikube docker-env`(macOS / Linux) or `
 * Minikube only: Afterwards you should see the Docker images of Kubernetes if you do `docker images`:
 
 ```
-[~/microservice-istio/microservice-istio]docker images
+[SCS-ESI/docker]docker images
 REPOSITORY                                TAG                 IMAGE ID            CREATED             SIZE
 k8s.gcr.io/kubernetes-dashboard-amd64     v1.10.1             f9aed6605b81        3 weeks ago         122MB
 k8s.gcr.io/kube-proxy                     v1.12.4             6d393e89739f        3 weeks ago         96.5MB
@@ -218,8 +218,9 @@ Step 6/10 : RUN apt-get install -y -qq varnish                                  
 * The images should now be available:
 
 ```
-[~/microservice-istio/microservice-istio-demo]docker images
+[~/SCS-ESI/docker]docker images
 REPOSITORY                                TAG                 IMAGE ID            CREATED              SIZE
+...
 scs-demo-esi-order                        latest              18da0f33925f        2 hours ago         318MB                                                                                                     scs-demo-esi-varnish                      latest              429b0893f00a        2 hours ago         310MB
 scs-demo-esi-common                       latest              ba1a226c150c        2 hours ago         8.41MB
 ...
