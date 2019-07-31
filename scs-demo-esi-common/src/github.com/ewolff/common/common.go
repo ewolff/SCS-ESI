@@ -12,6 +12,7 @@ func main() {
 	http.HandleFunc("/common/header-1.0", Header)
 	http.HandleFunc("/common/footer-1.0", Footer)
 	http.HandleFunc("/common/navbar-1.0", Navbar)
+	http.HandleFunc("/", Health)
 	fmt.Println("Starting up on 8180")
 	log.Fatal(http.ListenAndServe(":8180", nil))
 }
@@ -21,6 +22,10 @@ func Header(w http.ResponseWriter, req *http.Request) {
           <link rel="stylesheet" href="/common/css/bootstrap-3.3.7-dist/css/bootstrap.min.css" />
           <link rel="stylesheet" href="/common/css/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css" />
         `)
+}
+
+func Health(w http.ResponseWriter, req *http.Request) {
+	fmt.Fprintln(w, ``)
 }
 
 func Navbar(w http.ResponseWriter, req *http.Request) {

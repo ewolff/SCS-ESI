@@ -10,6 +10,14 @@ backend common {
     .port = "8180";
 }
 
+probe default {
+    .url = "/";
+    .timeout = 1s;
+    .interval = 2s;
+    .window = 3;
+    .threshold = 2;
+}
+
 sub vcl_recv {
     if (req.url ~ "^/common") {
        set req.backend_hint = common;
