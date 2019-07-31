@@ -8,7 +8,7 @@ echo "deb-src https://packagecloud.io/varnishcache/varnish60lts/ubuntu/ bionic m
 >> /etc/apt/sources.list.d/varnishcache_varnish60.list
 RUN apt-get update
 RUN apt-get install -y -qq varnish
-COPY default.vcl /etc/varnish/default.vcl
 COPY start /start
 RUN chmod 0755 /start
 CMD ["/start"]
+COPY default.vcl /etc/varnish/default.vcl
