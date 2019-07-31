@@ -11,15 +11,14 @@ backend common {
 }
 
 sub vcl_recv {
-    /* Redirect all requests to /common to go to the common */
     if (req.url ~ "^/common") {
        set req.backend_hint = common;
-    }
+       set req.ttl = 30s;
+    } 
 }
 
 sub vcl_backend_response {
     set beresp.do_esi = true;
-    set beresp.ttl = 30s;
-    set beresp.grace = 15m;
+    set beresp.ttl = 2s;
+    set beresp.grace = 15m;   
 }
-
