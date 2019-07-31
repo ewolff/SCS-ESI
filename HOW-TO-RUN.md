@@ -138,7 +138,7 @@ Vanish has processed the ESI includes in that version. If you use http://localho
 
 You can terminate all containers using `docker-compose down`.
 
-### Run the Containers on Minikube
+## Run the Containers on Minikube
 
 * Install
 [minikube](https://github.com/kubernetes/minikube/releases). Minikube
