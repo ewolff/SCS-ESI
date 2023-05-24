@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:22.04
 RUN apt-get update && apt-get dist-upgrade -y -qq
 RUN apt-get install -y -qq curl gnupg apt-transport-https
 RUN curl -L https://packagecloud.io/varnishcache/varnish60lts/gpgkey | apt-key add - && \
