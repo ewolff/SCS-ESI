@@ -1,4 +1,5 @@
-FROM golang:1.12.7-alpine
+FROM golang:1.20.4-alpine
+COPY /src/go.mod /go/src/go.mod
 COPY /src/github.com/ewolff/common /go/src/github.com/ewolff/common
 WORKDIR /go/src/github.com/ewolff/common
 RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o common .
