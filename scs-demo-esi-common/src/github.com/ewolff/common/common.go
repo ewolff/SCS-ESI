@@ -35,7 +35,7 @@ func Navbar(w http.ResponseWriter, req *http.Request) {
 	  <div calass="navbar-inner">
 	   <a class="brand" href="/"> Home</a>
            <a class="brand"
-		href="https://github.com/ultraq/thymeleaf-layout-dialect">Thymeleaf - Layout </a>`,
+		href="https://ewolff.com">ewolff.com</a>`,
 		t.Format("Mon Jan 2 2006 15:04:05"),
 	"</div></div>")
 }
